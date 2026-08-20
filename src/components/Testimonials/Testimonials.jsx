@@ -21,7 +21,7 @@ const Testimonials = () => {
         },
         {
             id: 3,
-            quote: 'Elevate has transformed how my son approaches learning. He actually looks forward to class time!',
+            quote: 'Young Explorers has transformed how my son approaches learning. He actually looks forward to class time!',
             author: 'David Lee',
             role: 'Parent of Noah, Age 10',
             avatar: '👨',
@@ -41,7 +41,7 @@ const Testimonials = () => {
         <section className="testimonials section section-white" id="testimonials">
             <div className="container">
                 <div className="section-header fade-in-up">
-                    <h2>What Parents Say About Elevate</h2>
+                    <h2>What Parents Say About Young Explorers</h2>
                     <p>Join thousands of satisfied families who have seen real results in their children's learning and confidence.</p>
                 </div>
 

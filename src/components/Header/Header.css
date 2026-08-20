@@ -1,11 +1,12 @@
 .header {
-    background-color: var(--color-navy-bg);
-    color: var(--color-white);
-    padding: var(--spacing-md) 0;
+    background-color: rgba(255, 255, 255, 0.96);
+    color: var(--color-navy-bg);
+    padding: 0.85rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(14px);
 }
 
 .header-content {
@@ -18,40 +19,56 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    font-size: 1.5rem;
-    font-weight: 700;
+    gap: 0.75rem;
+    color: var(--color-navy-bg);
     cursor: pointer;
-    transition: transform var(--transition-fast);
+    transition: opacity var(--transition-fast);
+}
+
+.logo-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px rgba(255, 203, 5, 0.28);
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    opacity: 0.82;
 }
 
-.logo-icon {
-    background: linear-gradient(135deg, var(--color-coral), var(--color-sun-gold));
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.logo-name {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    line-height: 1.05;
+    letter-spacing: 0;
+}
+
+.logo-name strong {
+    font-size: 1.08rem;
+    font-weight: 800;
+}
+
+.logo-name small {
+    margin-top: 0.25rem;
+    color: var(--color-dark-green);
+    font-size: 0.68rem;
     font-weight: 700;
-    color: var(--color-white);
-    font-size: 1.25rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
 .nav {
     display: flex;
-    gap: var(--spacing-xl);
+    justify-content: center;
+    gap: clamp(1rem, 2.5vw, 2.25rem);
     flex: 1;
 }
 
 .nav-link {
-    color: var(--color-white);
-    font-size: 1rem;
-    font-weight: 500;
+    color: var(--color-navy-bg);
+    font-size: 0.92rem;
+    font-weight: 600;
     position: relative;
     transition: color var(--transition-fast);
 }
@@ -59,7 +76,7 @@
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -0.55rem;
     left: 0;
     width: 0;
     height: 2px;
@@ -68,7 +85,7 @@
 }
 
 .nav-link:hover {
-    color: var(--color-coral);
+    color: var(--color-dark-green);
 }
 
 .nav-link:hover::after {
@@ -78,7 +95,20 @@
 .header-actions {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: 0.75rem;
+}
+
+.header-actions .btn-primary {
+    background: var(--color-sun-gold);
+    color: var(--color-navy-bg);
+    padding: 0.7rem 1.15rem;
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+
+.header-actions .btn-primary:hover {
+    background: var(--color-forest-green);
+    color: var(--color-white);
 }
 
 .menu-toggle {
@@ -123,7 +153,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--color-navy-bg);
+        background-color: var(--color-white);
         flex-direction: column;
         gap: 0;
         padding: var(--spacing-lg) 0;
@@ -134,12 +164,12 @@
 
     .nav.active {
         max-height: 400px;
-        box-shadow: var(--shadow-md);
+        box-shadow: var(--shadow-lg);
     }
 
     .nav-link {
         padding: var(--spacing-md) var(--spacing-lg);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid var(--color-border);
         display: block;
     }
 
@@ -148,7 +178,7 @@
     }
 
     .nav-link:hover {
-        background-color: rgba(255, 107, 107, 0.1);
+        background-color: rgba(66, 184, 102, 0.08);
     }
 
     .menu-toggle {
@@ -156,12 +186,12 @@
     }
 
     .header-actions {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
+        width: auto;
     }
 
     .header-actions .btn {
-        width: 100%;
+        width: auto;
     }
 }
 
@@ -170,14 +200,21 @@
         padding: 0;
     }
 
-    .logo {
-        font-size: 1.25rem;
-    }
-
-    .logo-icon {
+    .logo-mark {
         width: 35px;
         height: 35px;
-        font-size: 1rem;
+    }
+
+    .logo-name strong {
+        font-size: 0.9rem;
+    }
+
+    .logo-name small {
+        font-size: 0.56rem;
+    }
+
+    .header-actions .btn-primary {
+        display: none;
     }
 
     .nav-link {

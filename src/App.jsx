@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'motion/react';
 import './App.css';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
@@ -25,7 +26,12 @@ function App() {
   };
 
   return (
-      <div className="App">
+      <motion.div
+        className="App"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
         <Header menuOpen={menuOpen} onMenuToggle={handleMenuToggle} onMenuClose={handleMenuClose} />
         <Hero />
         <Features />
@@ -38,7 +44,7 @@ function App() {
         <FAQ />
         <Gallery />
         <Footer />
-      </div>
+      </motion.div>
   );
 }
 

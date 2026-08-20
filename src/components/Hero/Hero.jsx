@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import groupPhoto from '../../assets/Gallery/766147205_17975863917087640_3616330027367717205_n..jpg';
 
 const Hero = () => {
     return (
@@ -16,24 +17,13 @@ const Hero = () => {
                     </div>
 
                     <div className="hero-image slide-in-right">
-                        <div className="image-placeholder">
-                            <div className="placeholder-content">
-                                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="200" cy="200" r="180" fill="#FFE5B4"/>
-                                    <circle cx="200" cy="120" r="50" fill="#FFD7A8"/>
-                                    <circle cx="185" cy="110" r="6" fill="#333"/>
-                                    <circle cx="215" cy="110" r="6" fill="#333"/>
-                                    <path d="M 185 130 Q 200 140 215 130" stroke="#333" strokeWidth="2" fill="none"/>
-                                    <rect x="160" y="170" width="80" height="60" fill="#FF6B6B" rx="10"/>
-                                    <rect x="100" y="175" width="60" height="20" fill="#FFD7A8" rx="10"/>
-                                    <rect x="240" y="175" width="60" height="20" fill="#FFD7A8" rx="10"/>
-                                    <rect x="175" y="230" width="15" height="50" fill="#FFD7A8" rx="8"/>
-                                    <rect x="210" y="230" width="15" height="50" fill="#FFD7A8" rx="8"/>
-                                    <rect x="290" y="150" width="20" height="40" fill="#FFD7A8" rx="10"/>
-                                    <circle cx="305" cy="135" r="12" fill="#FFD7A8"/>
-                                </svg>
-                            </div>
+                        <img src={groupPhoto} alt="Young Explorers students enjoying a group activity by the pool" />
+                        <div className="hero-image-caption">
+                            <span className="caption-kicker">Explore together</span>
+                            <strong>Curiosity grows<br />when we learn outside.</strong>
+                            <span className="caption-meta">Hands-on learning for curious minds</span>
                         </div>
+                        <div className="hero-image-badge">Learn · Connect · Discover</div>
                     </div>
                 </div>
 

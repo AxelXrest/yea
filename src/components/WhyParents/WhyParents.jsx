@@ -30,7 +30,7 @@ const WhyParents = () => {
             <div className="container">
                 <div className="why-parents-content">
                     <div className="why-parents-text fade-in-up">
-                        <h2>Why Parents Trust Elevate for Early Learning</h2>
+                        <h2>Why Parents Trust Young Explorers for Early Learning</h2>
                         <p>We understand that choosing an educational platform for your child is an important decision. That's why we focus on creating a nurturing, safe, and effective learning environment.</p>
 
                         <div className="reasons-list">

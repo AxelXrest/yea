@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logoMark from '../../assets/young-explorers-mark.svg';
 
 const Footer = () => {
     return (
@@ -9,8 +10,8 @@ const Footer = () => {
                     <div className="footer-grid">
                         <div className="footer-section footer-brand fade-in-up">
                             <div className="footer-logo">
-                                <div className="logo-icon">E</div>
-                                <span>Elevate</span>
+                                <img className="logo-mark" src={logoMark} alt="" />
+                                <span>Young Explorers Academy</span>
                             </div>
                             <p>Inspiring young minds to explore, learn, and shine through innovative education.</p>
                             <div className="social-links">
@@ -62,7 +63,7 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-bottom">
-                        <p>&copy; 2024 Elevate Learning. All rights reserved. Designed with ❤️ for education.</p>
+                        <p>&copy; 2024 Young Explorers Academy. All rights reserved. Designed for curious minds.</p>
                     </div>
                 </div>
             </div>

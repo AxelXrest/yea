@@ -36,17 +36,11 @@
     min-width: max-content;
 }
 
-.logo-icon {
-    background: linear-gradient(135deg, var(--color-coral), var(--color-sun-gold));
-    width: 40px;
-    height: 40px;
+.footer-logo .logo-mark {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: var(--color-white);
-    font-size: 1.25rem;
+    object-fit: cover;
 }
 
 .footer-brand > div:nth-child(2) {
@@ -220,10 +214,9 @@
         font-size: 1.25rem;
     }
 
-    .logo-icon {
+    .footer-logo .logo-mark {
         width: 35px;
         height: 35px;
-        font-size: 1rem;
     }
 
     .footer-section h4 {

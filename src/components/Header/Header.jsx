@@ -1,5 +1,6 @@
 import 'react';
 import './Header.css';
+import logoMark from '../../assets/young-explorers-mark.svg';
 
 const Header = ({ menuOpen, onMenuToggle, onMenuClose }) => {
     const navLinks = [
@@ -15,9 +16,12 @@ const Header = ({ menuOpen, onMenuToggle, onMenuClose }) => {
         <header className="header">
             <div className="container">
                 <div className="header-content">
-                    <div className="logo">
-                        <div className="logo-icon">E</div>
-                        <span>Elevate</span>
+                    <div className="logo" aria-label="Young Explorers Academy">
+                        <img className="logo-mark" src={logoMark} alt="" />
+                        <span className="logo-name">
+                            <strong>Young Explorers</strong>
+                            <small>Academy</small>
+                        </span>
                     </div>
 
                     <nav className={`nav ${menuOpen ? 'active' : ''}`}>
@@ -35,7 +39,7 @@ const Header = ({ menuOpen, onMenuToggle, onMenuClose }) => {
 
                     <div className="header-actions">
                         <button className="btn btn-primary">Get Started</button>
-                        <button className="menu-toggle" onClick={onMenuToggle}>
+                        <button className="menu-toggle" onClick={onMenuToggle} aria-label="Toggle navigation menu" aria-expanded={menuOpen}>
                             <span></span>
                             <span></span>
                             <span></span>
