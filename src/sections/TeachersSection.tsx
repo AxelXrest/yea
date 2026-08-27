@@ -1,0 +1,5 @@
+import { teachers } from '../data/content'
+import { Reveal } from '../components/Reveal'
+import { SectionHeading } from '../components/SectionHeading'
+
+export function TeachersSection() { return <section id="teachers" className="section-pad bg-[#fffaf4]"><div className="mx-auto max-w-7xl px-5 lg:px-8"><Reveal><SectionHeading eyebrow="Our teachers" title="Caring & passionate teachers" text="People who make children feel seen, supported and excited to come back tomorrow."/></Reveal><div className="grid grid-cols-2 gap-4 md:grid-cols-4">{teachers.map((teacher,i)=><Reveal key={teacher.name} delay={i*.08}><div className="group text-center"><div className="mx-auto aspect-square max-w-[190px] overflow-hidden rounded-full border-8 border-white shadow-lg"><img src={teacher.image} alt={teacher.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-110"/></div><h3 className="mt-5 text-sm font-black text-[#202c4b]">{teacher.name}</h3><p className="mt-1 text-xs text-slate-500">{teacher.role}</p></div></Reveal>)}</div></div></section> }
