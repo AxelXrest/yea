@@ -14,7 +14,7 @@ export function Footer() {
         </div>
         <div><h3 className="font-bold">Quick Links</h3><div className="mt-5 space-y-3 text-sm text-white/55">{['About us','Our programs','Teachers','FAQ','Contact'].map(x => <a className="block hover:text-white" href="#" key={x}>{x}</a>)}</div></div>
         <div><h3 className="font-bold">Our Programs</h3><div className="mt-5 space-y-3 text-sm text-white/55">{['Early Learners','Preschool','Pre-K Explorers','Creative Arts','Holiday Camp'].map(x => <a className="block hover:text-white" href="#programs" key={x}>{x}</a>)}</div></div>
-        <div><h3 className="font-bold">Contact Info</h3><div className="mt-5 space-y-4 text-sm text-white/55"><p className="flex gap-3"><Phone size={17}/> +1 555 123 4567</p><p className="flex gap-3"><Mail size={17}/> hello@kidvero.com</p><p>123 Sunshine Street<br/>Your City, 10001</p></div></div>
+        <div><h3 className="font-bold">Contact Info</h3><div className="mt-5 space-y-4 text-sm text-white/55"><p className="flex gap-3"><Phone size={17}/> +1 555 123 4567</p><p className="flex gap-3"><Mail size={17}/> hello@youngexplorer.com</p><p>123 Sunshine Street<br/>Your City, 10001</p></div></div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/50">© 2026 Young Explorers Academy. All rights reserved.</div>
     </footer>
