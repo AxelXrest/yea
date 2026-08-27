@@ -11,6 +11,7 @@ import { TestimonialsSection } from './sections/TestimonialsSection'
 import { FAQSection } from './sections/FAQSection'
 import { EnrollmentSection } from './sections/EnrollmentSection'
 import { BlogSection } from './sections/BlogSection'
+import { GallerySection } from './sections/GallerySection'
 
 export default function App() {
   return <div className="min-h-screen overflow-x-hidden bg-white text-slate-700">
@@ -22,6 +23,7 @@ export default function App() {
       <TrustSection />
       <CTASection />
       <LearningSection />
+      <GallerySection />
       <TeachersSection />
       <TestimonialsSection />
       <FAQSection />

@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 const logo = new URL('../assets/YEA_LOGO - (1).png', import.meta.url).href
 
-const links = [['Home', '#home'], ['About', '#about'], ['Programs', '#programs'], ['Teachers', '#teachers'], ['Contact', '#contact']]
+const links = [['Home', '#home'], ['About', '#about'], ['Programs', '#programs'], ['Gallery', '#gallery'], ['Teachers', '#teachers'], ['Contact', '#contact']]
 
 export function Header() {
   const [open, setOpen] = useState(false)

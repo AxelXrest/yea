@@ -5,12 +5,17 @@ import { heroImages } from '../data/content'
 
 export function HeroSection() {
   const [activeImage, setActiveImage] = useState(0)
+  const [slideDirection, setSlideDirection] = useState(1)
   const [paused, setPaused] = useState(false)
   const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
     if (paused || prefersReducedMotion) return
-    const timer = window.setInterval(() => setActiveImage(current => (current + 1) % heroImages.length), 4500)
+    const timer = window.setInterval(() => setActiveImage(current => {
+      const next = (current + 1) % heroImages.length
+      setSlideDirection(next > current ? 1 : -1)
+      return next
+    }), 4000)
     return () => window.clearInterval(timer)
   }, [paused, prefersReducedMotion])
 
@@ -26,7 +31,7 @@ export function HeroSection() {
       </div>
       <div className="relative flex min-h-[430px] items-end justify-center lg:min-h-[560px]">
         <motion.div initial={{opacity:0,scale:.85,y:30}} animate={{opacity:1,scale:1,y:0}} transition={{duration:.8,delay:.2,type:'spring'}} className="relative z-10 w-full max-w-[510px]">
-          <div className="blob-image relative aspect-square overflow-hidden rounded-[32px] border-8 border-white/15 bg-[#42b866] shadow-2xl"><AnimatePresence mode="wait"><motion.img key={activeImage} initial={{opacity:0,x:35}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-35}} transition={{duration:.55}} className="h-full w-full object-cover" src={heroImages[activeImage]} alt="Children learning and exploring together" /></AnimatePresence><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#202c4b]/75 to-transparent px-6 pb-6 pt-20"><span className="text-xs font-bold text-white/80">Young Explorer Academy field notes</span><div className="mt-1 font-display text-xl font-black">Growing through every experience.</div></div></div>
+          <div className="blob-image relative aspect-square overflow-hidden rounded-[32px] border-8 border-white/15 bg-[#42b866] shadow-2xl"><AnimatePresence mode="wait" initial={false}><motion.img key={activeImage} initial={{opacity:0,x:slideDirection * 80}} animate={{opacity:1,x:0}} exit={{opacity:0,x:slideDirection * -80}} transition={{duration:.45,ease:[.22,1,.36,1]}} className="h-full w-full object-cover" src={heroImages[activeImage]} alt="Children learning and exploring together" /></AnimatePresence><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#202c4b]/75 to-transparent px-6 pb-6 pt-20"><span className="text-xs font-bold text-white/80">Young Explorer Academy field notes</span><div className="mt-1 font-display text-xl font-black">Growing through every experience.</div></div></div>
           <motion.div animate={{y:[0,-10,0],rotate:[-2,2,-2]}} transition={{duration:4,repeat:Infinity}} className="absolute -bottom-4 -left-2 rounded-3xl bg-white p-4 text-[#202c4b] shadow-2xl sm:left-0"><div className="text-xs font-black text-[#1f78b9]">Little explorer</div><div className="mt-1 text-sm font-bold">Learning through play</div></motion.div>
           <motion.div animate={{y:[0,8,0]}} transition={{duration:3.5,repeat:Infinity}} className="absolute right-0 top-16 rounded-3xl bg-[#ffcf58] px-5 py-4 text-center text-[#202c4b] shadow-xl"><div className="text-2xl font-black">30+</div><div className="text-[10px] font-bold">activities</div></motion.div>
         </motion.div>
