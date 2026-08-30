@@ -1,5 +1,7 @@
+import { MotionConfig } from 'motion/react'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import { SmoothScroll } from './components/layout/SmoothScroll'
 import { HeroSection } from './sections/HeroSection'
 import { AboutSection } from './sections/AboutSection'
 import { ProgramsSection } from './sections/ProgramsSection'
@@ -14,22 +16,28 @@ import { BlogSection } from './sections/BlogSection'
 import { GallerySection } from './sections/GallerySection'
 
 export default function App() {
-  return <div className="min-h-screen overflow-x-hidden bg-white text-slate-700">
-    <Header />
-    <main>
-      <HeroSection />
-      <AboutSection />
-      <ProgramsSection />
-      <TrustSection />
-      <CTASection />
-      <LearningSection />
-      <GallerySection />
-      <TeachersSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <EnrollmentSection />
-      <BlogSection />
-    </main>
-    <Footer />
-  </div>
+  return (
+    <MotionConfig reducedMotion="user">
+      <SmoothScroll>
+        <div className="min-h-screen overflow-x-hidden bg-[#f7fafc] text-[#17324d]">
+          <Header />
+          <main>
+            <HeroSection />
+            <AboutSection />
+            <ProgramsSection />
+            <TrustSection />
+            <CTASection />
+            <LearningSection />
+            <GallerySection />
+            <TeachersSection />
+            <TestimonialsSection />
+            <FAQSection />
+            <EnrollmentSection />
+            <BlogSection />
+          </main>
+          <Footer />
+        </div>
+      </SmoothScroll>
+    </MotionConfig>
+  )
 }
